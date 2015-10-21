@@ -6,15 +6,15 @@
 //  Copyright © 2015年 Ryan. All rights reserved.
 //
 
-protocol OptionalString {}
+public protocol OptionalString {}
 extension String: OptionalString {}
 
 extension Optional where Wrapped: OptionalString {
-    internal var isBlank: Bool {
+    public var isBlank: Bool {
         return ((self as? String) ?? "").isEmpty
     }
     
-    internal var isExist: Bool {
+    public var isExist: Bool {
         return !((self as? String) ?? "").isEmpty
     }
     
