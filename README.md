@@ -13,8 +13,6 @@
 $ gem install cocoapods
 ```
 
-> CocoaPods 0.39.0+ is required to build Alamofire 3.0.0+.
-
 To integrate SwiftPlugin-God into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
