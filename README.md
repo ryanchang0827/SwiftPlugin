@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.9+ / watchOS 2
+- iOS 8.0+
 
 
 ## Install
