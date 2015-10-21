@@ -11,29 +11,22 @@ import SwiftyJSON
 import MBProgressHUD
 
 extension UIViewController {
-    NSLocalizedStringFromTableInBundle(@"OK", @"Parse",
-    [NSBundle bundleForClass:[self class]],
-    @"Default alert view cancel button title.");
     
     func showProgress() {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
-        loadingNotification.labelText = NSLocalizedString("MSG_Loading", comment: "Loading...")
-        loadingNotification.labelText = NSLocalizedString("MSG_Loading", tableName: "GodPlugin", bundle: <#T##NSBundle#>, value: <#T##String#>, comment: "載入中")
-//        self.statusBarHUDForegroundColor = UIColor.colorFromCode(0x167EFB) // iOS7 Safari bar color
-//        self.showStatusBarHUD()
+        loadingNotification.labelText = NSLocalizedString("MSG_Loading", tableName: "lang", comment: "Loading...")
+
     }
     
     func hideProgress() {
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        
-//        self.hideStatusBarHUD()
     }
     
     func showErrorAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("CM_Error", comment: "錯誤"), message: NSLocalizedString("MSG_Disconnected", comment: "無法連線至網際網路"), preferredStyle: .Alert)
+        let alert = UIAlertController(title: NSLocalizedString("CM_Error", tableName: "lang", comment: "錯誤"), message: NSLocalizedString("MSG_Disconnected", tableName: "lang", comment: "無法連線至網際網路"), preferredStyle: .Alert)
         
-        let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", comment: "確定"), style: .Default) { action in
+        let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default) { action in
             self.hideProgress()
         }
         alert.addAction(Action)
@@ -41,9 +34,9 @@ extension UIViewController {
     }
     
     func showRetry() {
-        let alert = UIAlertController(title: NSLocalizedString("CM_Error", comment: "錯誤"), message: NSLocalizedString("MSG_RETRY", comment: "請稍候再試"), preferredStyle: .Alert)
+        let alert = UIAlertController(title: NSLocalizedString("CM_Error", tableName: "lang", comment: "錯誤"), message: NSLocalizedString("MSG_RETRY", tableName: "lang", comment: "請稍候再試"), preferredStyle: .Alert)
         
-        let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", comment: "確定"), style: .Default) { action in
+        let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default) { action in
             self.hideProgress()
         }
         alert.addAction(Action)
@@ -52,7 +45,7 @@ extension UIViewController {
     
     func showMsgAlert(msg :String) {
         let alert = UIAlertController(title: "", message: msg, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("CM_Confirm", comment: "確定"), style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -69,16 +62,9 @@ extension UIViewController {
                     NSLog("AlamofireError: \(response.result.error)")
                     self.showErrorAlert()
                 } else if let data = response.result.value {
-                    var modifyData :String = data
-                    modifyData = modifyData.stringByReplacingOccurrencesOfString("<?xml version=\"1.0\" encoding=\"utf-8\"?>", withString: "")
-                    modifyData = modifyData.stringByReplacingOccurrencesOfString("<string>", withString: "")
-                    modifyData = modifyData.stringByReplacingOccurrencesOfString("</string>", withString: "")
-                    
-                    if let data = modifyData.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true){
-                        
+                    if let data = data.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true){
                         completionHandler(result: JSON(data: data))
                     }
-                    
                 } else {
                     NSLog("AlamofireError: Data Something Wrong")
                     self.showRetry()
