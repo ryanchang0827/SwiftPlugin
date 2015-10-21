@@ -10,11 +10,11 @@ protocol OptionalString {}
 extension String: OptionalString {}
 
 extension Optional where Wrapped: OptionalString {
-    var isBlank: Bool {
+    internal var isBlank: Bool {
         return ((self as? String) ?? "").isEmpty
     }
     
-    var isExist: Bool {
+    internal var isExist: Bool {
         return !((self as? String) ?? "").isEmpty
     }
     

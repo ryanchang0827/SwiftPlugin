@@ -12,18 +12,18 @@ import MBProgressHUD
 
 extension UIViewController {
     
-    func showProgress() {
+    public func showProgress() {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
         loadingNotification.labelText = NSLocalizedString("MSG_Loading", tableName: "lang", comment: "Loading...")
 
     }
     
-    func hideProgress() {
+    public func hideProgress() {
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
-    func showErrorAlert() {
+    public func showErrorAlert() {
         let alert = UIAlertController(title: NSLocalizedString("CM_Error", tableName: "lang", comment: "錯誤"), message: NSLocalizedString("MSG_Disconnected", tableName: "lang", comment: "無法連線至網際網路"), preferredStyle: .Alert)
         
         let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default) { action in
@@ -33,7 +33,7 @@ extension UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func showRetry() {
+    public func showRetry() {
         let alert = UIAlertController(title: NSLocalizedString("CM_Error", tableName: "lang", comment: "錯誤"), message: NSLocalizedString("MSG_RETRY", tableName: "lang", comment: "請稍候再試"), preferredStyle: .Alert)
         
         let Action = UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default) { action in
@@ -43,13 +43,13 @@ extension UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func showMsgAlert(msg :String) {
+    public func showMsgAlert(msg :String) {
         let alert = UIAlertController(title: "", message: msg, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("CM_Confirm", tableName: "lang", comment: "確定"), style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func callapi (
+    public func callapi(
         apiPath :String,
         _ httpmethod :Alamofire.Method,
         _ parameters :[String: AnyObject]? = nil,

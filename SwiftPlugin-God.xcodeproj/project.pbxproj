@@ -13,6 +13,9 @@
 		94FB46D61BD6426E006E81A1 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB46D01BD6426E006E81A1 /* ExtString.swift */; settings = {ASSET_TAGS = (); }; };
 		94FB46D71BD6426E006E81A1 /* ExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB46D11BD6426E006E81A1 /* ExtViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		94FB46D81BD6426E006E81A1 /* lang.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94FB46D31BD6426E006E81A1 /* lang.strings */; settings = {ASSET_TAGS = (); }; };
+		94FB482A1BD76CBA006E81A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB48291BD76CBA006E81A1 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		94FB48371BD76D56006E81A1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FB47D01BD736A4006E81A1 /* Alamofire.framework */; };
+		94FB48381BD76D5B006E81A1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FB47BE1BD73676006E81A1 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,7 @@
 		94FB47B51BD73676006E81A1 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		94FB47C71BD736A4006E81A1 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		94FB47D91BD73887006E81A1 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		94FB48291BD76CBA006E81A1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FB48381BD76D5B006E81A1 /* SwiftyJSON.framework in Frameworks */,
+				94FB48371BD76D56006E81A1 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +179,7 @@
 				94FB46D21BD6426E006E81A1 /* Resources */,
 				94FB46B91BD64245006E81A1 /* SwiftPlugin-God.h */,
 				94FB46BB1BD64245006E81A1 /* Info.plist */,
+				94FB48291BD76CBA006E81A1 /* User.swift */,
 			);
 			path = "SwiftPlugin-God";
 			sourceTree = "<group>";
@@ -440,6 +447,7 @@
 			files = (
 				94FB46D71BD6426E006E81A1 /* ExtViewController.swift in Sources */,
 				94FB46D61BD6426E006E81A1 /* ExtString.swift in Sources */,
+				94FB482A1BD76CBA006E81A1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
