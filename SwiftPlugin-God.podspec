@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'SwiftPlugin-God'
-  spec.version = '1.0.0'
+  spec.version = '1.1.1'
   spec.summary = 'SwiftPlugin-God'
   spec.homepage = 'https://github.com/ryanchang0827/SwiftPlugin-God'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
@@ -8,6 +8,5 @@ Pod::Spec.new do |spec|
   spec.source = { :git => 'https://github.com/ryanchang0827/SwiftPlugin-God.git', :tag => "#{spec.version}" }
   spec.source_files = 'SwiftPlugin-God/*.swift'
   spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.9'
   spec.requires_arc = true
 end
